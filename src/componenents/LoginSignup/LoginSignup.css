@@ -1,0 +1,150 @@
+/* Container Styling */
+.container {
+  width: 400px;
+  margin: 80px auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  text-align: center;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Header */
+.header .text {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #00bfff;
+  margin: 8px auto 20px;
+  border-radius: 10px;
+  animation: slideIn 0.5s ease forwards;
+}
+
+/* Inputs */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: all 0.3s ease;
+}
+
+.input:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+.input img {
+  width: 22px;
+  margin-right: 10px;
+  opacity: 0.9;
+}
+
+.input input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+}
+
+/* Forgot Password */
+.forgot-pass {
+  font-size: 0.9rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+.forgot-pass span {
+  color: #00bfff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.forgot-pass span:hover {
+  color: #66e0ff;
+}
+
+/* Buttons */
+.submit-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.submit {
+  padding: 10px 25px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #00bfff, #0077ff);
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.submit.gray {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.submit:hover {
+  box-shadow: 0 0 10px #00bfff;
+}
+
+.submit-button {
+  background: #00bfff;
+  color: white;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #0091ff;
+  transform: scale(1.05);
+}
+
+/* Message */
+.message {
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(0, 255, 255, 0.15);
+  border-radius: 10px;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { width: 0; }
+  to { width: 60px; }
+}

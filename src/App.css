@@ -1,0 +1,542 @@
+/* App.css */
+
+/* Background gradient for the table header */
+.bg-gradient-primary {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  animation: backgroundShift 5s infinite alternate;
+}
+
+/* Keyframes for animating the background gradient */
+@keyframes backgroundShift {
+  0% {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+  }
+  100% {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  }
+}
+
+/* Button styles with animated hover effects */
+.btn-outline-primary {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-outline-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.3);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.btn-outline-primary:hover::before {
+  left: 0;
+}
+
+.btn-outline-danger {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.btn-outline-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(220, 53, 69, 0.3);
+  transition: left 0.3s;
+  z-index: -1;
+}
+
+.btn-outline-danger:hover::before {
+  left: 0;
+}
+
+/* Table row hover effect with scaling animation */
+.table-hover tbody tr {
+  transition: transform 0.3s ease, background-color 0.3s;
+}
+
+.table-hover tbody tr:hover {
+  transform: scale(1.02);
+  background-color: #f1f1f1;
+}
+
+/* Adding a shadow pulse animation to the card */
+.shadow {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Animation for the fade-in effect on table rows */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Loading animation */
+.spinner-border {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .w-75 {
+    width: 90% !important;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Styling the table header text */
+.table thead th {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+}
+
+/* Make table rows more visually appealing */
+.table tbody tr {
+  border-bottom: 1px solid #eaeaea;
+}
+/* Button styles with animated effects */
+.btn-outline-primary, .btn-outline-danger {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s, border-color 0.3s;
+  z-index: 1;
+}
+
+/* Animated background sliding effect */
+.btn-outline-primary::before, .btn-outline-danger::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.2); /* Light blue for primary */
+  transition: left 0.3s ease;
+  z-index: -1;
+}
+
+.btn-outline-danger::before {
+  background: rgba(220, 53, 69, 0.2); /* Light red for danger */
+}
+
+.btn-outline-primary:hover::before, .btn-outline-danger:hover::before {
+  left: 0;
+}
+
+/* Scale effect when button is clicked */
+.btn-outline-primary:active, .btn-outline-danger:active {
+  transform: scale(0.95);
+}
+
+/* Border animation effect */
+.btn-outline-primary:hover, .btn-outline-danger:hover {
+  border-color: transparent;
+  color: white;
+}
+
+.btn-outline-primary:hover::after, .btn-outline-danger:hover::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid;
+  border-color: currentColor;
+  transition: border-color 0.3s, transform 0.3s;
+  z-index: 2;
+  transform: scale(1.05);
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Fade effect */
+}
+
+.modal-overlay.fade-in {
+  opacity: 1; /* Show the modal */
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  transform: translateY(-50px); /* Start above */
+  opacity: 0; /* Start hidden */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Slide and fade effect */
+}
+
+.modal-content.slide-in {
+  transform: translateY(0); /* Slide down into view */
+  opacity: 1; /* Fade in */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.3s ease; /* Fade effect */
+}
+
+.modal-overlay.fade-in {
+  opacity: 1; /* Show the modal */
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  transform: translateY(-50px); /* Start above */
+  opacity: 0; /* Start hidden */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Slide and fade effect */
+}
+
+.modal-content.slide-in {
+  transform: translateY(0); /* Slide down into view */
+  opacity: 1; /* Fade in */
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.form-control {
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Focus border color */
+  box-shadow: 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Button background */
+  border-color: #007bff; /* Button border */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker background on hover */
+  border-color: #0056b3; /* Darker border on hover */
+}
+
+/* Margin adjustments for modern look */
+.form-group {
+  margin-bottom: 1.5rem; /* Space between inputs */
+}
+.form-control {
+  border: 1px solid #ced4da; /* Border color */
+  border-radius: 0.5rem; /* Rounded corners */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.form-control:focus {
+  border-color: #80bdff; /* Focus border color */
+  box-shadow: 0 0 0.25rem rgba(0, 123, 255, 0.25); /* Focus shadow */
+}
+
+.btn-primary {
+  background-color: #007bff; /* Button background */
+  border-color: #007bff; /* Button border */
+  border-radius: 0.5rem; /* Rounded corners */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker background on hover */
+  border-color: #0056b3; /* Darker border on hover */
+}
+
+/* Margin adjustments for modern look */
+.form-group {
+  margin-bottom: 1.5rem; /* Space between inputs */
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.fade-in {
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content.slide-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal-overlay.fade-in {
+  opacity: 1;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  padding: 20px;
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.modal-content.slide-in {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.modal-footer .btn {
+  margin-left: 10px;
+}
+
+.table {
+  transition: transform 0.3s ease;
+}
+
+.table tbody tr {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.table tbody tr:hover {
+  background-color: rgba(0, 123, 255, 0.1); /* Light blue on hover */
+  transform: translateY(-2px);
+}
+
+.table thead {
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+}
+
+.table th {
+  transition: background-color 0.3s ease;
+}
+
+.table th:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.table td {
+  transition: color 0.3s ease;
+}
+
+.table td:hover {
+  color: #007bff; /* Change text color on hover */
+}
+.btn-add {
+  background-color: #007bff; /* Bootstrap primary color */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 20px; /* Padding for a better look */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.btn-add:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.btn-add:focus {
+  outline: none; /* Remove focus outline */
+}
