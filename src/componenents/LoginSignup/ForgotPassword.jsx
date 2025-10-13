@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './ForgotPassword.css';
-import emailIcon from '../Assets/email.png';
+import emailIcon from '../Assets/mail.png';
 import { motion } from 'framer-motion';
 
 const ForgotPassword = () => {
