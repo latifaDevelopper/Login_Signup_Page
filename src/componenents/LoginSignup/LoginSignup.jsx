@@ -3,7 +3,7 @@ import axios from 'axios';
 import './LoginSignup.css';
 import { useNavigate } from 'react-router-dom';
 
-import emailIcon from '../Assets/email.png';
+import emailIcon from '../Assets/mail.png';
 import passIcon from '../Assets/pass.png';
 import userIcon from '../Assets/user.png';
 import { motion, AnimatePresence } from 'framer-motion';
